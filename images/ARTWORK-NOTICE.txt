@@ -1,0 +1,3 @@
+This build contains user-supplied image assets.
+Ownership and permitted use of those assets remain with their respective rights holders.
+Striker and Sentry use the trainer's built-in flexible-loadout icon because they do not have dedicated ability pictures.

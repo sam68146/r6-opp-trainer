@@ -1,0 +1,310 @@
+R6 OPERATOR TRAINER — EXPECTED IMAGE FILENAMES
+
+Accepted extensions: .png, .webp, .avif, .jpg, .jpeg
+Images are optional. The built-in placeholders appear when a file is missing.
+
+OPERATORS (77)
+Folder: images/operators
+------------------------------------------------------------------------
+Ace  ->  ace.png
+Alibi  ->  alibi.png
+Amaru  ->  amaru.png
+Aruni  ->  aruni.png
+Ash  ->  ash.png
+Azami  ->  azami.png
+Bandit  ->  bandit.png
+Blackbeard  ->  blackbeard.png
+Blitz  ->  blitz.png
+Brava  ->  brava.png
+Buck  ->  buck.png
+Capitao  ->  capitao.png
+Castle  ->  castle.png
+Caveira  ->  caveira.png
+Clash  ->  clash.png
+Deimos  ->  deimos.png
+Denari  ->  denari.png
+Doc  ->  doc.png
+Dokkaebi  ->  dokkaebi.png
+Echo  ->  echo.png
+Ela  ->  ela.png
+Fenrir  ->  fenrir.png
+Finka  ->  finka.png
+Flores  ->  flores.png
+Frost  ->  frost.png
+Fuze  ->  fuze.png
+Glaz  ->  glaz.png
+Goyo  ->  goyo.png
+Gridlock  ->  gridlock.png
+Grim  ->  grim.png
+Hibana  ->  hibana.png
+Iana  ->  iana.png
+IQ  ->  iq.png
+Jackal  ->  jackal.png
+Jager  ->  jager.png
+Kaid  ->  kaid.png
+Kali  ->  kali.png
+Kapkan  ->  kapkan.png
+Lesion  ->  lesion.png
+Lion  ->  lion.png
+Maestro  ->  maestro.png
+Maverick  ->  maverick.png
+Melusi  ->  melusi.png
+Mira  ->  mira.png
+Montagne  ->  montagne.png
+Mozzie  ->  mozzie.png
+Mute  ->  mute.png
+Nokk  ->  nokk.png
+Nomad  ->  nomad.png
+Oryx  ->  oryx.png
+Osa  ->  osa.png
+Pulse  ->  pulse.png
+Ram  ->  ram.png
+Rauora  ->  rauora.png
+Rook  ->  rook.png
+Sens  ->  sens.png
+Sentry  ->  sentry.png
+Skopos  ->  skopos.png
+Sledge  ->  sledge.png
+Smoke  ->  smoke.png
+Solid Snake  ->  solid-snake.png
+Solis  ->  solis.png
+Striker  ->  striker.png
+Tachanka  ->  tachanka.png
+Thatcher  ->  thatcher.png
+Thermite  ->  thermite.png
+Thorn  ->  thorn.png
+Thunderbird  ->  thunderbird.png
+Tubarao  ->  tubarao.png
+Twitch  ->  twitch.png
+Valkyrie  ->  valkyrie.png
+Vigil  ->  vigil.png
+Wamai  ->  wamai.png
+Warden  ->  warden.png
+Ying  ->  ying.png
+Zero  ->  zero.png
+Zofia  ->  zofia.png
+
+GADGETS (14)
+Folder: images/gadgets
+------------------------------------------------------------------------
+Barbed Wire  ->  barbed-wire.png
+Breach Charge  ->  breach-charge.png
+Bulletproof Camera  ->  bulletproof-camera.png
+Claymore  ->  claymore.png
+Deployable Shield  ->  deployable-shield.png
+Frag Grenade  ->  frag-grenade.png
+Hard Breach Charge  ->  hard-breach-charge.png
+Impact EMP Grenade  ->  impact-emp-grenade.png
+Impact Grenade  ->  impact-grenade.png
+Nitro Cell  ->  nitro-cell.png
+Observation Blocker  ->  observation-blocker.png
+Proximity Alarm  ->  proximity-alarm.png
+Smoke Grenade  ->  smoke-grenade.png
+Stun Grenade  ->  stun-grenade.png
+
+PRIMARY WEAPONS (83)
+Folder: images/primary-weapons
+------------------------------------------------------------------------
+416-C Carbine  ->  416-c-carbine.png
+417  ->  417.png
+552 Commando  ->  552-commando.png
+556xi  ->  556xi.png
+6P41  ->  6p41.png
+9mm C1  ->  9mm-c1.png
+9x19VSN  ->  9x19vsn.png
+ACS12  ->  acs12.png
+AK-12  ->  ak-12.png
+AK-74M  ->  ak-74m.png
+ALDA 5.56  ->  alda-5-56.png
+AR-15.50  ->  ar-15-50.png
+AR33  ->  ar33.png
+ARX200  ->  arx200.png
+AUG A2  ->  aug-a2.png
+AUG A3  ->  aug-a3.png
+Ballistic Shield  ->  ballistic-shield.png
+BOSG.12.2  ->  bosg-12-2.png
+C7E  ->  c7e.png
+C8-SFW  ->  c8-sfw.png
+CAMRS  ->  camrs.png
+CCE Shield MK2  ->  cce-shield-mk2.png
+Commando 9  ->  commando-9.png
+CSRX 300  ->  csrx-300.png
+DP27  ->  dp27.png
+F2  ->  f2.png
+F90  ->  f90.png
+FMG-9  ->  fmg-9.png
+FO-12  ->  fo-12.png
+G36C  ->  g36c.png
+G52-Tactical Shield  ->  g52-tactical-shield.png
+G8A1  ->  g8a1.png
+ITA12L  ->  ita12l.png
+K1A  ->  k1a.png
+L85A2  ->  l85a2.png
+Le Roc Shield  ->  le-roc-shield.png
+LMG-E  ->  lmg-e.png
+M1014  ->  m1014.png
+M12  ->  m12.png
+M249  ->  m249.png
+M249 SAW  ->  m249-saw.png
+M4  ->  m4.png
+M590A1  ->  m590a1.png
+M762  ->  m762.png
+M870  ->  m870.png
+Mk 14 EBR  ->  mk-14-ebr.png
+Mk17 CQB  ->  mk17-cqb.png
+MP5  ->  mp5.png
+MP5K  ->  mp5k.png
+MP5SD  ->  mp5sd.png
+MP7  ->  mp7.png
+MPX  ->  mpx.png
+Mx4 Storm  ->  mx4-storm.png
+OTs-03  ->  ots-03.png
+P10 RONI  ->  p10-roni.png
+P90  ->  p90.png
+PARA-308  ->  para-308.png
+PCX-33  ->  pcx-33.png
+PDW9  ->  pdw9.png
+PMR90A2  ->  pmr90a2.png
+POF9  ->  pof9.png
+R4-C  ->  r4-c.png
+SASG-12  ->  sasg-12.png
+SC3000K  ->  sc3000k.png
+Scorpion EVO 3 A1  ->  scorpion-evo-3-a1.png
+SG-CQB  ->  sg-cqb.png
+SIX12  ->  six12.png
+SIX12 SD  ->  six12-sd.png
+SPAS-12  ->  spas-12.png
+SPAS-15  ->  spas-15.png
+Spear .308  ->  spear-308.png
+SR-25  ->  sr-25.png
+Super 90  ->  super-90.png
+SuperNova  ->  supernova.png
+T-5 SMG  ->  t-5-smg.png
+T-95 LSW  ->  t-95-lsw.png
+TCSG12  ->  tcsg12.png
+Type-89  ->  type-89.png
+UMP45  ->  ump45.png
+UZK50Gi  ->  uzk50gi.png
+V308  ->  v308.png
+Vector .45 ACP  ->  vector-45-acp.png
+XK23  ->  xk23.png
+
+SECONDARY WEAPONS (34)
+Folder: images/secondary-weapons
+------------------------------------------------------------------------
+.44 Mag Semi-Auto  ->  44-mag-semi-auto.png
+.44 Vendetta  ->  44-vendetta.png
+1911 TACOPS  ->  1911-tacops.png
+5.7 USG  ->  5-7-usg.png
+Bailiff 410  ->  bailiff-410.png
+Bearing 9  ->  bearing-9.png
+C75 Auto  ->  c75-auto.png
+D-50  ->  d-50.png
+Glaive-12  ->  glaive-12.png
+Gonne-6  ->  gonne-6.png
+GSh-18  ->  gsh-18.png
+ITA12S  ->  ita12s.png
+Keratos .357  ->  keratos-357.png
+LFP586  ->  lfp586.png
+Luison  ->  luison.png
+M45 MEUSOC  ->  m45-meusoc.png
+Mk1 9mm  ->  mk1-9mm.png
+P-10C  ->  p-10c.png
+P12  ->  p12.png
+P226 Mk 25  ->  p226-mk-25.png
+P229  ->  p229.png
+P9  ->  p9.png
+PMM  ->  pmm.png
+PRB92  ->  prb92.png
+Q-929  ->  q-929.png
+Reaper MK2  ->  reaper-mk2.png
+RG15  ->  rg15.png
+SDP 9mm  ->  sdp-9mm.png
+SMG-11  ->  smg-11.png
+SMG-12  ->  smg-12.png
+SPSMG9  ->  spsmg9.png
+Super Shorty  ->  super-shorty.png
+TACIT .45  ->  tacit-45.png
+USP40  ->  usp40.png
+
+ABILITIES (77)
+Folder: images/abilities
+------------------------------------------------------------------------
+"Rtila" Electroclaw  ->  rtila-electroclaw.png
+Active Defense System  ->  active-defense-system.png
+Adrenal Surge  ->  adrenal-surge.png
+Airjab Launcher  ->  airjab-launcher.png
+Argus Launcher  ->  argus-launcher.png
+Armor Pack  ->  armor-pack.png
+Armor Panel  ->  armor-panel.png
+Banshee Sonic Defense  ->  banshee-sonic-defense.png
+Black Eye  ->  black-eye.png
+Black Mirror  ->  black-mirror.png
+Breaching Hammer  ->  breaching-hammer.png
+Breaching Round  ->  breaching-round.png
+Breaching Torch  ->  breaching-torch.png
+BU-GI Auto Breacher  ->  bu-gi-auto-breacher.png
+Can Equip Two Different Attack Gadgets  ->  can-equip-two-different-attack-gadgets.png
+Can Equip Two Different Defense Gadgets  ->  can-equip-two-different-defense-gadgets.png
+Candela  ->  candela.png
+Cardiac Sensor  ->  cardiac-sensor.png
+CCE Shield MK2  ->  cce-shield-mk2.png
+Cluster Charge  ->  cluster-charge.png
+D.O.M. Panel Launcher  ->  d-o-m-panel-launcher.png
+Deathmark Tracker  ->  deathmark-tracker.png
+E.G.S. Disruptor  ->  e-g-s-disruptor.png
+EE-ONE-D  ->  ee-one-d.png
+Electronics Detector  ->  electronics-detector.png
+Entry Denial Device  ->  entry-denial-device.png
+ERC-7  ->  erc-7.png
+Evil Eye  ->  evil-eye.png
+Exothermic Charge  ->  exothermic-charge.png
+Eyenox Model III  ->  eyenox-model-iii.png
+F-Natt Dread Mine  ->  f-natt-dread-mine.png
+Flip Sight  ->  flip-sight.png
+G52-Tactical Shield  ->  g52-tactical-shield.png
+Garra Hook  ->  garra-hook.png
+Gemini Replicator  ->  gemini-replicator.png
+Glance Smart Glasses  ->  glance-smart-glasses.png
+Grzmot Mine  ->  grzmot-mine.png
+Gu Mine  ->  gu-mine.png
+H.U.L.L. Adaptable Shield  ->  h-u-l-l-adaptable-shield.png
+HEL Presence Reduction  ->  hel-presence-reduction.png
+Jegeo Payload  ->  jegeo-payload.png
+Kawan Hive Launcher  ->  kawan-hive-launcher.png
+Kiba Barrier  ->  kiba-barrier.png
+Kludge Drone  ->  kludge-drone.png
+Kóna Station  ->  kona-station.png
+KS79 Lifeline  ->  ks79-lifeline.png
+Le Roc Shield  ->  le-roc-shield.png
+LV Explosive Lance  ->  lv-explosive-lance.png
+Mag-NET System  ->  mag-net-system.png
+Pest Launcher  ->  pest-launcher.png
+Prisma  ->  prisma.png
+R.O.U. Projector System  ->  r-o-u-projector-system.png
+Razorbloom Shell  ->  razorbloom-shell.png
+RCE-Ratero Charge  ->  rce-ratero-charge.png
+Remah Dash  ->  remah-dash.png
+Remote Gas Grenade  ->  remote-gas-grenade.png
+S.E.L.M.A. Aqua Breacher  ->  s-e-l-m-a-aqua-breacher.png
+Shock Drone  ->  shock-drone.png
+Shock Wire  ->  shock-wire.png
+Shumikha Launcher  ->  shumikha-launcher.png
+Signal Disruptor  ->  signal-disruptor.png
+Silent Step  ->  silent-step.png
+Skeleton Key  ->  skeleton-key.png
+Soliton Radar MK III and On-Site Procurement  ->  soliton-radar-mk-iii-and-on-site-procurement.png
+SPEC-IO Electro-Sensor  ->  spec-io-electro-sensor.png
+Stim Pistol  ->  stim-pistol.png
+Surya Gate  ->  surya-gate.png
+T.R.I.P. Connector  ->  t-r-i-p-connector.png
+Tactical Crossbow  ->  tactical-crossbow.png
+Talon-8 Clear Shield  ->  talon-8-clear-shield.png
+Trax Stingers  ->  trax-stingers.png
+V10 Pantheon Shells  ->  v10-pantheon-shells.png
+Volcán Canister  ->  volcan-canister.png
+Welcome Mat  ->  welcome-mat.png
+X-Kairos  ->  x-kairos.png
+Yokai  ->  yokai.png
+Zoto Canister  ->  zoto-canister.png
+

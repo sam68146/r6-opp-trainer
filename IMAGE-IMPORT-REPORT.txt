@@ -1,0 +1,20 @@
+R6 Operator Trainer — Image Import Report
+
+Project folder name: r6-opp-trainer
+Source image packs: R6 images.zip and R6 images (2).zip
+Output image format: PNG with transparency where possible
+
+Matched counts:
+- operators: 77/77
+- gadgets: 14/14
+- primary weapons: 83/83
+- secondary weapons: 34/34
+- dedicated ability images: 75/75
+
+No dedicated ability image is required for:
+- Striker — Can Equip Two Different Attack Gadgets
+- Sentry — Can Equip Two Different Defense Gadgets
+
+The game displays a deliberate flexible-loadout icon for Striker and Sentry.
+
+All expected operator, gadget, weapon and dedicated ability images are present.

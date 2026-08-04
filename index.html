@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="A polished Rainbow Six operator knowledge trainer.">
+    <title>R6 Operator Trainer</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <a class="brand" href="#quiz" data-view-link="quiz" aria-label="R6 Operator Trainer home">
+            <img class="brand-mark" src="assets/logo-mark.svg" alt="">
+            <span class="brand-copy">
+                <span class="brand-kicker">Tactical knowledge system</span>
+                <strong>R6 Operator Trainer</strong>
+            </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <button class="nav-button is-active" type="button" data-view="quiz" aria-pressed="true">
+                <span class="nav-icon" aria-hidden="true">⌖</span>
+                Quiz
+            </button>
+            <button class="nav-button" type="button" data-view="operators" aria-pressed="false">
+                <span class="nav-icon" aria-hidden="true">▦</span>
+                Operators
+            </button>
+            <button class="nav-button" type="button" data-view="stats" aria-pressed="false">
+                <span class="nav-icon" aria-hidden="true">▥</span>
+                Stats
+            </button>
+        </nav>
+
+        <div class="top-actions">
+            <span class="loaded-pill"><b id="brandOperatorCount">0</b> operators loaded</span>
+            <button class="icon-button" id="howToButton" type="button" aria-label="How to play" title="How to play">?</button>
+            <button class="icon-button" id="settingsButton" type="button" aria-label="Settings" title="Settings">⚙</button>
+            <button class="primary compact" id="newRunButton" type="button">New run</button>
+        </div>
+    </header>
+
+    <main class="app-shell">
+        <section class="app-view is-active" id="quizView" data-view-panel="quiz">
+            <section class="hero-strip" aria-label="Current run statistics">
+                <div class="hero-copy">
+                    <span class="eyebrow">Live training session</span>
+                    <h1>Read the loadout.<br><span>Name the operator.</span></h1>
+                    <p>Start with gadgets. Every wrong guess reveals another clue and reduces the available points.</p>
+                </div>
+
+                <div class="run-stats">
+                    <article class="mini-stat accent-stat">
+                        <span>Run score</span>
+                        <strong id="runScore">0</strong>
+                    </article>
+                    <article class="mini-stat">
+                        <span>Best score</span>
+                        <strong id="bestScore">0</strong>
+                    </article>
+                    <article class="mini-stat">
+                        <span>Streak</span>
+                        <strong id="currentStreak">0</strong>
+                    </article>
+                    <article class="mini-stat">
+                        <span>Best streak</span>
+                        <strong id="bestStreak">0</strong>
+                    </article>
+                    <article class="mini-stat">
+                        <span>Accuracy</span>
+                        <strong id="runAccuracy">0%</strong>
+                    </article>
+                </div>
+            </section>
+
+            <div class="quiz-layout">
+                <section class="glass-panel challenge-panel" aria-labelledby="challengeTitle">
+                    <header class="panel-header">
+                        <div>
+                            <span class="eyebrow">Current challenge</span>
+                            <h2 id="challengeTitle">Guess the operator</h2>
+                            <p id="roundProgressText" class="muted-text">Preparing operator pool…</p>
+                        </div>
+
+                        <div class="pool-picker" aria-label="Operator pool">
+                            <span>Pool</span>
+                            <div class="segmented-control" role="group" aria-label="Choose operator pool">
+                                <button type="button" class="segment is-active" data-pool="all" aria-pressed="true">All</button>
+                                <button type="button" class="segment" data-pool="Attack" aria-pressed="false">Attack</button>
+                                <button type="button" class="segment" data-pool="Defense" aria-pressed="false">Defence</button>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="round-progress" aria-hidden="true">
+                        <div id="roundProgressBar"></div>
+                    </div>
+
+                    <div class="challenge-meta">
+                        <div class="points-chip">
+                            <span>Points available</span>
+                            <strong id="pointsAvailable">100</strong>
+                        </div>
+                        <div class="side-chip" id="hiddenSideChip">Identity classified</div>
+                    </div>
+
+                    <ol class="stage-track" id="stageTrack" aria-label="Clue stages">
+                        <li class="stage-step is-active" data-level="0">
+                            <span class="stage-number">01</span>
+                            <span><b>Gadgets</b><small>Starting clue</small></span>
+                        </li>
+                        <li class="stage-step" data-level="1">
+                            <span class="stage-number">02</span>
+                            <span><b>Secondary</b><small>First reveal</small></span>
+                        </li>
+                        <li class="stage-step" data-level="2">
+                            <span class="stage-number">03</span>
+                            <span><b>Primary</b><small>Second reveal</small></span>
+                        </li>
+                        <li class="stage-step" data-level="3">
+                            <span class="stage-number">04</span>
+                            <span><b>Ability</b><small>Final clue</small></span>
+                        </li>
+                    </ol>
+
+                    <div class="clue-board" id="clues" aria-live="polite"></div>
+                </section>
+
+                <aside class="glass-panel answer-panel" aria-labelledby="answerTitle">
+                    <div class="answer-topline">
+                        <span class="eyebrow">Submit identification</span>
+                        <span class="shortcut-pill">Enter ↵</span>
+                    </div>
+                    <h2 id="answerTitle">Who is it?</h2>
+                    <p class="answer-copy">Type a name or pick one of the matching suggestions.</p>
+
+                    <div class="autocomplete" id="autocomplete">
+                        <label class="sr-only" for="guessInput">Operator name</label>
+                        <div class="input-shell">
+                            <span class="input-icon" aria-hidden="true">⌕</span>
+                            <input id="guessInput" type="text" placeholder="Enter operator name…" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="suggestionList" aria-expanded="false">
+                            <button id="clearGuessButton" class="clear-input" type="button" aria-label="Clear answer" hidden>×</button>
+                        </div>
+                        <div class="suggestion-list" id="suggestionList" role="listbox" hidden></div>
+                    </div>
+
+                    <div class="answer-actions">
+                        <button class="primary" id="submitButton" type="button">Submit guess</button>
+                        <button class="secondary" id="revealButton" type="button">Reveal answer</button>
+                    </div>
+
+                    <div class="feedback-zone" id="answerFeedback" aria-live="assertive">
+                        <div class="feedback-placeholder">
+                            <span class="pulse-dot"></span>
+                            Awaiting your answer
+                        </div>
+                    </div>
+
+                    <button class="next-button" id="nextButton" type="button" hidden>
+                        Next operator <span aria-hidden="true">→</span>
+                    </button>
+                    <p class="auto-status" id="autoAdvanceStatus"></p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="app-view" id="operatorsView" data-view-panel="operators" hidden>
+            <header class="section-heading">
+                <div>
+                    <span class="eyebrow">Database</span>
+                    <h1>Operator directory</h1>
+                    <p>Search every operator and inspect the exact data used by the quiz.</p>
+                </div>
+                <div class="directory-count"><strong id="directoryCount">0</strong><span>matching operators</span></div>
+            </header>
+
+            <section class="glass-panel directory-toolbar">
+                <div class="directory-search">
+                    <span aria-hidden="true">⌕</span>
+                    <input id="operatorSearch" type="search" placeholder="Search name, ability, weapon or gadget…">
+                </div>
+                <select id="operatorSideFilter" aria-label="Filter by side">
+                    <option value="all">All sides</option>
+                    <option value="Attack">Attackers</option>
+                    <option value="Defense">Defenders</option>
+                </select>
+            </section>
+
+            <div class="operator-grid" id="operatorGrid"></div>
+        </section>
+
+        <section class="app-view" id="statsView" data-view-panel="stats" hidden>
+            <header class="section-heading">
+                <div>
+                    <span class="eyebrow">Performance report</span>
+                    <h1>Your training stats</h1>
+                    <p>Lifetime results are stored locally in this browser.</p>
+                </div>
+                <div class="section-actions">
+                    <button class="secondary compact" id="exportStatsButton" type="button">Export stats</button>
+                    <button class="danger compact" id="resetAllButton" type="button">Reset all data</button>
+                </div>
+            </header>
+
+            <div class="stats-dashboard">
+                <section class="glass-panel lifetime-panel">
+                    <span class="eyebrow">Lifetime overview</span>
+                    <div class="lifetime-grid">
+                        <article><span>Questions</span><strong id="lifetimeQuestions">0</strong></article>
+                        <article><span>Correct</span><strong id="lifetimeCorrect">0</strong></article>
+                        <article><span>Accuracy</span><strong id="lifetimeAccuracy">0%</strong></article>
+                        <article><span>Best score</span><strong id="statsBestScore">0</strong></article>
+                        <article><span>Best streak</span><strong id="statsBestStreak">0</strong></article>
+                    </div>
+                </section>
+
+                <section class="glass-panel clue-report">
+                    <div class="panel-title-row">
+                        <div>
+                            <span class="eyebrow">Correct answer timing</span>
+                            <h2>Clue efficiency</h2>
+                        </div>
+                    </div>
+                    <div id="clueEfficiencyBars" class="bar-list"></div>
+                </section>
+
+                <section class="glass-panel recent-panel">
+                    <div class="panel-title-row">
+                        <div>
+                            <span class="eyebrow">Latest attempts</span>
+                            <h2>Recent results</h2>
+                        </div>
+                    </div>
+                    <div id="recentHistory" class="history-list"></div>
+                </section>
+
+                <section class="glass-panel difficult-panel">
+                    <div class="panel-title-row">
+                        <div>
+                            <span class="eyebrow">Practice targets</span>
+                            <h2>Most missed operators</h2>
+                        </div>
+                    </div>
+                    <div id="difficultOperators" class="difficulty-list"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>Built as a local, offline-first training tool.</span>
+        <span>Images are optional — missing assets use clean built-in placeholders.</span>
+    </footer>
+
+    <dialog class="modal" id="howToDialog">
+        <form method="dialog" class="modal-card">
+            <header class="modal-header">
+                <div><span class="eyebrow">Briefing</span><h2>How to play</h2></div>
+                <button class="modal-close" value="close" aria-label="Close">×</button>
+            </header>
+            <div class="how-grid">
+                <article><span>01</span><h3>Read the gadgets</h3><p>Every question begins with all of the operator’s standard gadgets.</p></article>
+                <article><span>02</span><h3>Submit a guess</h3><p>A wrong answer reveals secondary weapons, then primary weapons, then the unique ability.</p></article>
+                <article><span>03</span><h3>Earn more early</h3><p>Correct from gadgets for 100 points. Later clue stages award 75, 50 and 25.</p></article>
+                <article><span>04</span><h3>Complete the pool</h3><p>Every operator appears once before the selected pool is shuffled again.</p></article>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="modal" id="settingsDialog">
+        <form method="dialog" class="modal-card settings-card">
+            <header class="modal-header">
+                <div><span class="eyebrow">Preferences</span><h2>Settings</h2></div>
+                <button class="modal-close" value="close" aria-label="Close">×</button>
+            </header>
+            <label class="setting-row">
+                <span><b>Auto-advance</b><small>Move to the next operator after a result.</small></span>
+                <input id="autoAdvanceToggle" type="checkbox">
+            </label>
+            <label class="setting-row">
+                <span><b>Advance delay</b><small>How long the result remains visible.</small></span>
+                <select id="advanceDelaySelect">
+                    <option value="1200">1.2 seconds</option>
+                    <option value="1800">1.8 seconds</option>
+                    <option value="2500">2.5 seconds</option>
+                    <option value="3500">3.5 seconds</option>
+                </select>
+            </label>
+            <label class="setting-row">
+                <span><b>Sound effects</b><small>Short generated tones for correct and wrong answers.</small></span>
+                <input id="soundToggle" type="checkbox">
+            </label>
+            <label class="setting-row">
+                <span><b>Reduce motion</b><small>Turn off most interface animations.</small></span>
+                <input id="reduceMotionToggle" type="checkbox">
+            </label>
+        </form>
+    </dialog>
+
+    <dialog class="modal" id="operatorDialog">
+        <form method="dialog" class="modal-card operator-modal-card">
+            <button class="modal-close floating-close" value="close" aria-label="Close">×</button>
+            <div id="operatorDialogContent"></div>
+        </form>
+    </dialog>
+
+    <dialog class="modal" id="resetDialog">
+        <form method="dialog" class="modal-card confirm-card">
+            <span class="confirm-icon">!</span>
+            <h2>Reset all progress?</h2>
+            <p>This clears the current run, lifetime statistics and per-operator history stored in this browser.</p>
+            <div class="confirm-actions">
+                <button class="secondary" value="cancel">Cancel</button>
+                <button class="danger" id="confirmResetButton" value="confirm">Reset everything</button>
+            </div>
+        </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="data/operators.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
