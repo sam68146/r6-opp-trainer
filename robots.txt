@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sam68146.github.io/r6-opp-trainer/sitemap.xml
