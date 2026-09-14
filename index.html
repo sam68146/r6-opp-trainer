@@ -15,8 +15,13 @@
     <meta property="og:description" content="Guess Rainbow Six Siege operators from their gadgets, weapons and unique abilities. Track your score, streak and accuracy.">
     <meta property="og:url" content="https://sam68146.github.io/r6-opp-trainer/">
     <meta property="og:site_name" content="R6 Operator Trainer">
+    <meta property="og:image" content="https://sam68146.github.io/r6-opp-trainer/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="R6 Operator Trainer — guess Rainbow Six Siege operators by loadout">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sam68146.github.io/r6-opp-trainer/assets/og-image.png">
     <meta name="twitter:title" content="R6 Operator Trainer – Rainbow Six Siege Operator Quiz">
     <meta name="twitter:description" content="Guess Rainbow Six Siege operators from their gadgets, weapons and unique abilities.">
 
@@ -27,12 +32,19 @@
       "name": "R6 Operator Trainer",
       "url": "https://sam68146.github.io/r6-opp-trainer/",
       "description": "An interactive Rainbow Six Siege operator knowledge quiz based on gadgets, weapons and unique abilities.",
-      "applicationCategory": "EducationalApplication",
+      "applicationCategory": "GameApplication",
       "operatingSystem": "Any",
-      "isAccessibleForFree": true
+      "isAccessibleForFree": true,
+      "inLanguage": "en",
+      "browserRequirements": "Requires a modern web browser",
+      "keywords": "R6 operator quiz, guess the R6 operator, Rainbow Six Siege operator quiz, guess operator by loadout"
     }
     </script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -120,6 +132,14 @@
                                 <button type="button" class="segment is-active" data-pool="all" aria-pressed="true">All</button>
                                 <button type="button" class="segment" data-pool="Attack" aria-pressed="false">Attack</button>
                                 <button type="button" class="segment" data-pool="Defense" aria-pressed="false">Defence</button>
+                            </div>
+                        </div>
+                        <div class="difficulty-picker" aria-label="Quiz difficulty">
+                            <span>Difficulty</span>
+                            <div class="segmented-control" role="group" aria-label="Choose difficulty">
+                                <button type="button" class="segment is-active" data-difficulty="normal" aria-pressed="true">Normal</button>
+                                <button type="button" class="segment" data-difficulty="easy" aria-pressed="false">Easy</button>
+                                <button type="button" class="segment" data-difficulty="hard" aria-pressed="false">Hard</button>
                             </div>
                         </div>
                     </header>

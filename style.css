@@ -2076,3 +2076,34 @@ select option {
     color: #ffffff;
     background-color: #151c29;
 }
+
+/* SEO/about section */
+.seo-section {
+    margin: 2rem auto 3rem;
+    max-width: 1100px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1rem;
+}
+.seo-copy, .seo-faq {
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    background: rgba(10,14,24,.72);
+    backdrop-filter: blur(12px);
+}
+.seo-copy h2 { margin: .35rem 0 .8rem; }
+.seo-copy p { color: var(--muted, #aeb8c8); line-height: 1.7; }
+.seo-faq { display: grid; gap: .7rem; }
+.seo-faq details {
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    padding: .8rem 1rem;
+}
+.seo-faq summary { cursor: pointer; font-weight: 700; }
+.seo-faq p { color: var(--muted, #aeb8c8); line-height: 1.6; margin: .7rem 0 .1rem; }
+.difficulty-picker { display: grid; gap: .45rem; }
+@media (max-width: 800px) {
+    .seo-section { grid-template-columns: 1fr; padding: 1rem; }
+}

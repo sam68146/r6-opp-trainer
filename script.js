@@ -14,7 +14,8 @@
             autoAdvance: true,
             advanceDelay: 1800,
             sound: false,
-            reduceMotion: false
+            reduceMotion: false,
+            difficulty: "normal"
         },
         run: {
             score: 0,
@@ -73,6 +74,7 @@
         runAccuracy: document.getElementById("runAccuracy"),
 
         poolButtons: [...document.querySelectorAll("[data-pool]")],
+        difficultyButtons: [...document.querySelectorAll("[data-difficulty]")],
         roundProgressText: document.getElementById("roundProgressText"),
         roundProgressBar: document.getElementById("roundProgressBar"),
         pointsAvailable: document.getElementById("pointsAvailable"),
@@ -453,7 +455,7 @@
     function startQuestion() {
         clearNextTimers();
         pullNextOperator();
-        clueLevel = 0;
+        clueLevel = state.settings.difficulty === "easy" ? 2 : 0;
         isLocked = false;
 
         elements.guessInput.disabled = false;
@@ -516,9 +518,10 @@
         }
 
         clueLevel += 1;
+        const maxClueLevel = state.settings.difficulty === "hard" ? 1 : 3;
 
-        if (clueLevel > 3) {
-            clueLevel = 3;
+        if (clueLevel > maxClueLevel) {
+            clueLevel = maxClueLevel;
             completeQuestion(false, false);
             return;
         }
@@ -1135,6 +1138,11 @@
             button.classList.toggle("is-active", active);
             button.setAttribute("aria-pressed", String(active));
         });
+        elements.difficultyButtons.forEach(button => {
+            const active = button.dataset.difficulty === state.settings.difficulty;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+        });
     }
 
     function playTone(type) {
@@ -1171,6 +1179,15 @@
         toastTimer = window.setTimeout(() => elements.toast.classList.remove("is-visible"), 2600);
     }
 
+    function setDifficulty(difficulty) {
+        if (!["easy", "normal", "hard"].includes(difficulty)) return;
+        state.settings.difficulty = difficulty;
+        saveState();
+        applySettingsToInterface();
+        startQuestion();
+        showToast(`${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} difficulty selected.`);
+    }
+
     function bindEvents() {
         elements.navButtons.forEach(button => button.addEventListener("click", () => showView(button.dataset.view)));
         elements.viewLinks.forEach(link => link.addEventListener("click", event => {
@@ -1183,6 +1200,7 @@
         elements.newRunButton.addEventListener("click", newRun);
 
         elements.poolButtons.forEach(button => button.addEventListener("click", () => setPool(button.dataset.pool)));
+        elements.difficultyButtons.forEach(button => button.addEventListener("click", () => setDifficulty(button.dataset.difficulty)));
         elements.submitButton.addEventListener("click", submitGuess);
         elements.revealButton.addEventListener("click", revealAnswer);
         elements.nextButton.addEventListener("click", startQuestion);
